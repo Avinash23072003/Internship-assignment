@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resizable and Draggable Circle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Part A: Rectangle -->
+    <div class="rectangle-container">
+      <div id="rectangle" class="rectangle"></div>
+      <div class="control-panel">
+        <label for="rotate-slider">Rotate:</label>
+        <input type="range" id="rotate-slider" min="0" max="360" value="0">
+        <span id="rotation-value">0°</span>
+      </div>
+      <div class="control-panel">
+        <label for="color-picker">Change Color:</label>
+        <input type="color" id="color-picker" value="#ff0000">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Part B: Resizable and Draggable Circle -->
+    <div class="circle-container">
+      <div id="circle" class="circle"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
