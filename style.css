@@ -49,7 +49,8 @@ body {
 
 .circle-container {
   position: relative;
-  width: 300px;
+  width: 90%;
+  max-width: 300px; /* Maintain a maximum size for larger screens */
   height: 300px;
   border: 2px dashed #888;
   border-radius: 10px;
@@ -63,13 +64,25 @@ body {
   background-color: blue;
   border-radius: 50%;
   cursor: grab;
-  transition: width 0.2s, height 0.2s;
+  transition: width 0.2s, height 0.2s, transform 0.2s;
+  touch-action: none; /* Prevent default scrolling behavior during touch */
+}
+
+.circle.dragging {
+  cursor: grabbing;
+  opacity: 0.8; /* Visual feedback during drag */
+}
+
+.circle.resizing {
+  cursor: nwse-resize;
+  border: 2px solid #000; /* Highlight circle during resize */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
     flex: 1 1 100%;
+    margin: 5px;
   }
 
   .circle-container {
@@ -80,5 +93,18 @@ body {
   .circle {
     width: 80px;
     height: 80px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .circle-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle {
+    width: 60px;
+    height: 60px;
   }
 }
